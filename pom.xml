@@ -50,6 +50,26 @@
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.cloudinary/cloudinary-core -->
+<!--		<dependency>-->
+<!--			<groupId>com.cloudinary</groupId>-->
+<!--			<artifactId>cloudinary-core</artifactId>-->
+<!--			<version>1.33.0</version>-->
+<!--		</dependency>-->
+		<!-- https://mvnrepository.com/artifact/com.cloudinary/cloudinary-http44 -->
+		<dependency>
+			<groupId>com.cloudinary</groupId>
+			<artifactId>cloudinary-http44</artifactId>
+			<version>1.22.1</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.cloudinary/cloudinary-taglib -->
+		<dependency>
+			<groupId>com.cloudinary</groupId>
+			<artifactId>cloudinary-taglib</artifactId>
+			<version>1.0.14</version>
+		</dependency>
+
+
 	</dependencies>
 	<dependencyManagement>
 		<dependencies>
@@ -60,6 +80,13 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
+			<!-- https://mvnrepository.com/artifact/com.vaadin/vaadin-maven-plugin -->
+			<dependency>
+				<groupId>com.vaadin</groupId>
+				<artifactId>vaadin-maven-plugin</artifactId>
+				<version>23.3.6</version>
+			</dependency>
+
 		</dependencies>
 	</dependencyManagement>
 
@@ -83,17 +110,14 @@
 						<version>${vaadin.version}</version>
 						<executions>
 							<execution>
-								<id>frontend</id>
-								<phase>compile</phase>
 								<goals>
 									<goal>prepare-frontend</goal>
-									<goal>build-frontend</goal>
 								</goals>
-								<configuration>
-									<productionMode>true</productionMode>
-								</configuration>
 							</execution>
 						</executions>
+						<configuration>
+							<nodeAutoUpdate>true</nodeAutoUpdate>
+						</configuration>
 					</plugin>
 				</plugins>
 			</build>
