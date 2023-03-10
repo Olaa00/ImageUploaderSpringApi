@@ -19,11 +19,13 @@ public class UploadGui extends VerticalLayout {
 
        TextField textField = new TextField();
        Label label = new Label();
+
+
        Button button = new Button("upload");
        button.addClickListener(buttonClickEvent -> {
 
 
-         String uploadedImage = imageUploader.uploadFile(textField.getValue());//upload pliku ze sciezki podanej w textfieldzie
+         String uploadedImage = imageUploader.uploadFileAndDBSave(textField.getValue());//upload pliku ze sciezki podanej w textfieldzie
          Image image = new Image( uploadedImage, "brak zdjecia:(");
          label.setText("Upload zdjecia dokonany pomyślnie!");
          add(label);

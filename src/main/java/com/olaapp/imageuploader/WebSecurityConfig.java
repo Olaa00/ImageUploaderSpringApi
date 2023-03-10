@@ -44,10 +44,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/test1").hasRole("USER")
                 .antMatchers("/test2").hasRole("ADMIN")
                 .antMatchers("/upload").hasRole("ADMIN")
+                .antMatchers("/gallery").hasRole("USER")
                 .and()
                 .formLogin().permitAll()
                 .and()
-                .csrf().disable(); //zabezpieczenie springa przed zewn hostem
+//                .httpBasic() do laczenia z postmanem
+                .csrf().disable(); //zabezpieczenie springa przed zewn hostem.
+
                // .headers().frameOptions().disable()
 //                .and()
 //                .headers().disable();
